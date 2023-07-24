@@ -1,10 +1,12 @@
 import puppeteer from "puppeteer";
-import {Apartment, insert} from "../database/database";
+import {insert} from "./database";
+import {Apartment} from "../types";
 
 async function getApartments(){
     const browser = await puppeteer.launch({
         headless: true,
         defaultViewport: null,
+        args: ['--no-sandbox']
     });
 
     const page = await browser.newPage();

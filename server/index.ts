@@ -1,8 +1,7 @@
 import getApartments from "./scraper";
 import express from 'express';
 import cors from 'cors';
-import { Apartment, select } from "../database/database";
-
+import {select} from "./database";
 
 getApartments();
 

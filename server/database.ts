@@ -1,9 +1,5 @@
 import pool from './dbconfig';
-
-export interface Apartment{
-    title: string;
-    image_url: string;
-}
+import {Apartment} from "../types";
 
 export async function insert(apartment: Apartment) {
     const client = await pool.connect();
