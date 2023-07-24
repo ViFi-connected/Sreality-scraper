@@ -20,7 +20,7 @@ function App() {
         const firstPageIndex = (currentPage - 1) * pageSize;
         const lastPageIndex = firstPageIndex + pageSize;
         return apartments?.slice(firstPageIndex, lastPageIndex);
-    }, [currentPage]);
+    }, [apartments, currentPage]);
 
     useEffect(() => {
         fetchData()
@@ -33,7 +33,7 @@ function App() {
                     return (
                         <div className="apartment">
                             <p>{apartment.title}</p>
-                            <img src={apartment.image_url}/>
+                            <img src={apartment.image_url} alt={""}/>
                         </div>
                     );
                 })}
