@@ -9,12 +9,7 @@ export type Props = {
     setCurrentPage: (page: number) => void;
 };
 
-export default function Pagination({
-                                       currentPage,
-                                       lastPage,
-                                       maxLength,
-                                       setCurrentPage,
-                                   }: Props) {
+export default function Pagination({currentPage, lastPage, maxLength, setCurrentPage}: Props) {
     const pageNums = getPaginationItems(currentPage, lastPage, maxLength);
 
     return (

@@ -14,6 +14,7 @@ async function getApartments(){
     let pageNumber = 1;
     let apartmentList: Apartment[] = [];
 
+    console.log("Scraping apartments ...");
     do {
         let url = pageNumber === 1 ? "https://www.sreality.cz/en/search/for-sale/apartments" : `https://www.sreality.cz/en/search/for-sale/apartments?page=${pageNumber}`;
         await page.goto(url, {
@@ -32,18 +33,16 @@ async function getApartments(){
         }) as Apartment[];
         apartmentList.push(...apartments);
         pageNumber++;
-        console.log(apartmentList.length);
     } while (apartmentList.length < 500)
+    console.log("Finished scraping");
 
-    console.log(apartmentList);
-
+    console.log("Inserting data into database ...");
     for (let apartment of apartmentList) {
         await insert(apartment);
     }
+    console.log("Data inserted");
 
-    // Close the browser
     await browser.close();
-
 }
 
 export default getApartments;

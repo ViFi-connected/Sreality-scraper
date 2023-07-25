@@ -1,7 +1,7 @@
 {
-  "name": "scraper",
+  "name": "scraper-server",
   "version": "1.0.0",
-  "description": "sbazar apartment scraper",
+  "description": "sreality.cz apartment scraper",
   "main": "index.ts",
   "dependencies": {
     "@types/cors": "^2.8.13",
