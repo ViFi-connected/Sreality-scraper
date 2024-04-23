@@ -3,6 +3,6 @@ Scrapes the first 500 items (title, image url) from sreality.cz and saves them i
 
 Run:
 ```bash
-docker-compose up
+docker compose up
 ```
  and go to http://127.0.0.1:8080
